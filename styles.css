@@ -292,7 +292,7 @@ main {
 /* Features Section */
 .features {
     padding: 6rem 2rem;
-    background-color: #0f172a;
+    background: linear-gradient(180deg, #0a1628 0%, #0f1f3a 100%);
     width: 100%;
     overflow-x: hidden;
 }
@@ -313,25 +313,25 @@ main {
 }
 
 .feature-card {
-    background: linear-gradient(145deg, #1e293b, #0f172a);
+    background: linear-gradient(145deg, #1e3a5f, #0f1f3a);
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid #334155;
+    border: 1px solid #2563eb;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     text-align: center;
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
-    border-color: #3B82F6;
-    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+    border-color: #60a5fa;
+    box-shadow: 0 20px 60px rgba(96, 165, 250, 0.3);
 }
 
 .feature-icon-large {
     width: 48px;
     height: 48px;
     margin: 0 auto 1.5rem;
-    color: #3B82F6;
+    color: #60a5fa;
 }
 
 .feature-card h3 {
@@ -348,7 +348,7 @@ main {
 /* Algorithm Section */
 .algorithm {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+    background: linear-gradient(180deg, #1a0a28 0%, #2a0f3a 100%);
     width: 100%;
     overflow-x: hidden;
 }
@@ -385,15 +385,15 @@ main {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
-    background: rgba(30, 41, 59, 0.5);
+    background: rgba(88, 28, 135, 0.3);
     padding: 2rem;
     border-radius: 16px;
-    border: 1px solid #334155;
+    border: 1px solid #7c3aed;
     transition: border-color 0.3s, transform 0.3s;
 }
 
 .algo-feature:hover {
-    border-color: #3B82F6;
+    border-color: #a78bfa;
     transform: translateX(10px);
 }
 
@@ -401,13 +401,13 @@ main {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    color: #3B82F6;
+    color: #a78bfa;
 }
 
 .algo-text h4 {
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
-    color: #3B82F6;
+    color: #c4b5fd;
 }
 
 .algo-text p {
@@ -425,15 +425,15 @@ main {
 .stat {
     text-align: center;
     padding: 2rem;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(124, 58, 237, 0.2);
     border-radius: 16px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(167, 139, 250, 0.4);
 }
 
 .stat-value {
     font-size: 3rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    background: linear-gradient(135deg, #8B5CF6 0%, #c4b5fd 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -441,7 +441,7 @@ main {
 }
 
 .stat-label {
-    color: #cbd5e1;
+    color: #e9d5ff;
     font-size: 0.95rem;
 }
 
