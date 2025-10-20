@@ -50,7 +50,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -70,7 +70,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #7C3AED;
+    color: #3B82F6;
 }
 
 /* Main Content */
@@ -97,7 +97,7 @@ main {
     font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -150,7 +150,7 @@ main {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
 }
 
 .btn-app-store,
@@ -269,7 +269,7 @@ main {
 }
 
 .placeholder-content p {
-    color: #7C3AED;
+    color: #3B82F6;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -310,8 +310,8 @@ main {
 
 .feature-card:hover {
     transform: translateY(-8px);
-    border-color: #7C3AED;
-    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2);
+    border-color: #3B82F6;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
 }
 
 .feature-icon-large {
@@ -375,7 +375,7 @@ main {
 }
 
 .algo-feature:hover {
-    border-color: #7C3AED;
+    border-color: #3B82F6;
     transform: translateX(10px);
 }
 
@@ -387,7 +387,7 @@ main {
 .algo-text h4 {
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
-    color: #7C3AED;
+    color: #3B82F6;
 }
 
 .algo-text p {
@@ -405,15 +405,15 @@ main {
 .stat {
     text-align: center;
     padding: 2rem;
-    background: rgba(124, 58, 237, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     border-radius: 16px;
-    border: 1px solid rgba(124, 58, 237, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .stat-value {
     font-size: 3rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
