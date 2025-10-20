@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,6 +14,9 @@ body {
     line-height: 1.6;
     background-color: #0a0e1a;
     color: #fff;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Header & Navigation */
@@ -82,6 +86,8 @@ main {
 .hero {
     padding: 4rem 2rem;
     background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .hero-container {
@@ -91,6 +97,7 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    width: 100%;
 }
 
 .hero-content h1 {
@@ -285,6 +292,8 @@ main {
 .features {
     padding: 6rem 2rem;
     background-color: #0f172a;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .features h2 {
@@ -339,6 +348,8 @@ main {
 .algorithm {
     padding: 6rem 2rem;
     background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .algorithm-container {
@@ -438,6 +449,8 @@ main {
     text-align: center;
     padding: 6rem 2rem;
     background-color: #0f172a;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .download h2 {
@@ -499,6 +512,7 @@ footer {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
 
     .hero-content {
@@ -544,6 +558,10 @@ footer {
 
     .hero {
         padding: 2rem 1rem;
+    }
+
+    .hero-container {
+        gap: 1.5rem;
     }
 
     .hero-content h1 {
@@ -627,7 +645,11 @@ footer {
     }
 
     .hero {
-        padding: 1.5rem 0.75rem;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .hero-container {
+        gap: 1rem;
     }
 
     .hero-content h1 {
@@ -692,7 +714,7 @@ footer {
     }
 
     .features {
-        padding: 2.5rem 0.75rem;
+        padding: 2.5rem 0.5rem;
     }
 
     .features h2 {
@@ -706,6 +728,7 @@ footer {
 
     .feature-card {
         padding: 1.5rem 1rem;
+        margin: 0;
     }
 
     .feature-icon-large {
@@ -725,7 +748,7 @@ footer {
     }
 
     .algorithm {
-        padding: 2.5rem 0.75rem;
+        padding: 2.5rem 0.5rem;
     }
 
     .algorithm-content h2 {
@@ -737,10 +760,11 @@ footer {
         font-size: 0.9rem;
         margin-bottom: 1.5rem;
         line-height: 1.6;
+        padding: 0 0.5rem;
     }
 
     .algorithm-features {
-        gap: 1.5rem;
+        gap: 1rem;
         margin-bottom: 2rem;
     }
 
@@ -748,6 +772,7 @@ footer {
         flex-direction: column;
         gap: 0.75rem;
         padding: 1.25rem;
+        margin: 0;
     }
 
     .algo-icon {
@@ -783,7 +808,7 @@ footer {
     }
 
     .download {
-        padding: 2.5rem 0.75rem;
+        padding: 2.5rem 0.5rem;
     }
 
     .download h2 {
@@ -794,10 +819,12 @@ footer {
     .download p {
         font-size: 0.9rem;
         margin-bottom: 2rem;
+        padding: 0 0.5rem;
     }
 
     .download-buttons {
         gap: 0.75rem;
+        padding: 0 0.5rem;
     }
 
     .btn-app-store-large,
@@ -817,7 +844,7 @@ footer {
     }
 
     footer {
-        padding: 1.5rem 0.75rem;
+        padding: 1.5rem 0.5rem;
         font-size: 0.85rem;
     }
 }
