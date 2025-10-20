@@ -116,59 +116,73 @@
         <!-- Features Section -->
         <section id="features" class="features">
             <h2>Powerful Features for Effective Learning</h2>
-            <div class="features-row">
-                <div class="feature-card">
+            <div class="features-container">
+                <div class="features-row">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
                     <h3>Cloze Deletion</h3>
                     <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
                     <h3>Cards at Risk</h3>
                     <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
                     <h3>Customizable Decks</h3>
                     <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
                     <h3>Quiz Modes</h3>
                     <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
                     <h3>Study by Deck</h3>
                     <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="settings-outline" class="feature-icon-large"></ion-icon>
                     <h3>Algorithm Parameters</h3>
                     <p>Fine-tune the FSRS algorithm with customizable parameters to match your learning preferences.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="analytics-outline" class="feature-icon-large"></ion-icon>
                     <h3>Smart Analytics</h3>
                     <p>Track your progress with detailed statistics, heatmaps, and memory curve visualizations.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="notifications-outline" class="feature-icon-large"></ion-icon>
                     <h3>Smart Reminders</h3>
                     <p>Never miss a review with customizable notifications and quiet hours support.</p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
                     <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
                     <h3>Dark Mode</h3>
                     <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
+                </div>
+                </div>
+
+                <!-- iPhone Mockup -->
+                <div class="features-phone">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <img src="images/app-screenshot.png" alt="Feature Preview" class="screenshot" id="feature-preview">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -283,5 +297,34 @@
     <footer>
         <p>&copy; 2025 Brainbank. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Feature card hover interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            const featurePreview = document.getElementById('feature-preview');
+
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    // Remove active class from all cards
+                    featureCards.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to hovered card
+                    this.classList.add('active');
+
+                    // Update the screenshot
+                    const screenshot = this.getAttribute('data-screenshot');
+                    if (screenshot && featurePreview) {
+                        featurePreview.src = screenshot;
+                    }
+                });
+            });
+
+            // Set first card as active on page load
+            if (featureCards.length > 0) {
+                featureCards[0].classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
