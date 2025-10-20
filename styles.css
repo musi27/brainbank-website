@@ -685,7 +685,7 @@ footer {
     }
 
     .btn {
-        width: auto;
+        width: 220px;
         justify-content: center;
         font-size: 0.85rem;
         padding: 0.65rem 1rem;
