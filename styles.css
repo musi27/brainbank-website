@@ -433,15 +433,12 @@ main {
 .stat-value {
     font-size: 3rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #8B5CF6 0%, #c4b5fd 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
-    color: #e9d5ff;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 
