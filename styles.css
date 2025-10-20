@@ -11,13 +11,13 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    background-color: #0a0a0a;
+    background-color: #0a0e1a;
     color: #fff;
 }
 
 /* Header & Navigation */
 header {
-    background-color: rgba(26, 26, 26, 0.95);
+    background-color: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
     position: fixed;
@@ -63,7 +63,7 @@ nav ul {
 }
 
 nav a {
-    color: #fff;
+    color: #e2e8f0;
     text-decoration: none;
     transition: color 0.3s;
     font-weight: 500;
@@ -81,7 +81,7 @@ main {
 /* Hero Section */
 .hero {
     padding: 4rem 2rem;
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a0a2e 100%);
+    background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
 }
 
 .hero-container {
@@ -105,7 +105,7 @@ main {
 
 .hero-description {
     font-size: 1.25rem;
-    color: #aaa;
+    color: #cbd5e1;
     margin-bottom: 2rem;
     line-height: 1.8;
 }
@@ -122,11 +122,13 @@ main {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.95rem;
-    color: #ccc;
+    color: #e2e8f0;
 }
 
 .feature-icon {
-    font-size: 1.5rem;
+    width: 20px;
+    height: 20px;
+    color: #3B82F6;
 }
 
 .cta-buttons {
@@ -155,14 +157,14 @@ main {
 
 .btn-app-store,
 .btn-app-store-large {
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-    border: 1px solid #333;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
 }
 
 .btn-play-store,
 .btn-play-store-large {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border: 1px solid #3a3a3a;
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    border: 1px solid #64748b;
 }
 
 .store-icon {
@@ -210,12 +212,12 @@ main {
 .phone-frame {
     width: 280px;
     height: 570px;
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    background: linear-gradient(145deg, #1e293b, #0f172a);
     border-radius: 40px;
     padding: 12px;
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.8),
-        0 0 0 2px #2a2a2a,
+        0 0 0 2px #334155,
         inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     position: relative;
 }
@@ -227,7 +229,7 @@ main {
     transform: translateX(-50%);
     width: 120px;
     height: 28px;
-    background: #0a0a0a;
+    background: #0f172a;
     border-radius: 0 0 20px 20px;
     z-index: 2;
 }
@@ -251,7 +253,7 @@ main {
     display: none;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1a0a2e 0%, #2a1a3e 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -275,20 +277,21 @@ main {
 }
 
 .placeholder-content small {
-    color: #888;
+    color: #94a3b8;
     font-size: 0.75rem;
 }
 
 /* Features Section */
 .features {
     padding: 6rem 2rem;
-    background-color: #0f0f0f;
+    background-color: #0f172a;
 }
 
 .features h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 4rem;
+    color: #f1f5f9;
 }
 
 .features-row {
@@ -300,10 +303,10 @@ main {
 }
 
 .feature-card {
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    background: linear-gradient(145deg, #1e293b, #0f172a);
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #334155;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     text-align: center;
 }
@@ -315,25 +318,27 @@ main {
 }
 
 .feature-icon-large {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.5rem;
+    color: #3B82F6;
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #f1f5f9;
 }
 
 .feature-card p {
-    color: #aaa;
+    color: #cbd5e1;
     line-height: 1.7;
 }
 
 /* Algorithm Section */
 .algorithm {
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a0a2e 100%);
+    background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
 }
 
 .algorithm-container {
@@ -345,12 +350,13 @@ main {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    color: #f1f5f9;
 }
 
 .algorithm-intro {
     text-align: center;
     font-size: 1.2rem;
-    color: #aaa;
+    color: #cbd5e1;
     margin-bottom: 4rem;
     max-width: 800px;
     margin-left: auto;
@@ -367,10 +373,10 @@ main {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
-    background: rgba(26, 26, 26, 0.5);
+    background: rgba(30, 41, 59, 0.5);
     padding: 2rem;
     border-radius: 16px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #334155;
     transition: border-color 0.3s, transform 0.3s;
 }
 
@@ -380,8 +386,10 @@ main {
 }
 
 .algo-icon {
-    font-size: 2.5rem;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
+    color: #3B82F6;
 }
 
 .algo-text h4 {
@@ -391,7 +399,7 @@ main {
 }
 
 .algo-text p {
-    color: #aaa;
+    color: #cbd5e1;
     line-height: 1.7;
 }
 
@@ -421,7 +429,7 @@ main {
 }
 
 .stat-label {
-    color: #aaa;
+    color: #cbd5e1;
     font-size: 0.95rem;
 }
 
@@ -429,16 +437,17 @@ main {
 .download {
     text-align: center;
     padding: 6rem 2rem;
-    background-color: #0f0f0f;
+    background-color: #0f172a;
 }
 
 .download h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #f1f5f9;
 }
 
 .download p {
-    color: #aaa;
+    color: #cbd5e1;
     margin-bottom: 3rem;
     font-size: 1.25rem;
 }
@@ -468,11 +477,21 @@ main {
 
 /* Footer */
 footer {
-    background-color: #1a1a1a;
+    background-color: #1e293b;
     text-align: center;
     padding: 2.5rem;
-    color: #888;
-    border-top: 1px solid #2a2a2a;
+    color: #94a3b8;
+    border-top: 1px solid #334155;
+}
+
+/* Icon Styles */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }
 
 /* Responsive Design */
