@@ -10,74 +10,210 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Brainbank</div>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#download">Download</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Brainbank Logo" class="logo-img">
+                    <div class="logo">Brainbank</div>
+                </div>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#algorithm">Algorithm</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section with App Screenshot -->
         <section class="hero">
-            <h1>Master Anything with Spaced Repetition</h1>
-            <p>Learn smarter, not harder. Brainbank uses scientifically-proven spaced repetition to help you remember what matters.</p>
-            <div class="cta-buttons">
-                <a href="#download" class="btn btn-primary">Download Now</a>
-                <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Master Anything with Spaced Repetition</h1>
+                    <p class="hero-description">Brainbank uses the scientifically-proven FSRS algorithm to optimize your learning schedule. Study smarter, remember longer, and achieve your learning goals faster.</p>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span class="feature-icon">🧠</span>
+                            <span>FSRS Algorithm</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">📊</span>
+                            <span>Progress Tracking</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="feature-icon">🔥</span>
+                            <span>Streak Building</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-app-store">
+                            <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                            </svg>
+                            <div class="store-text">
+                                <span class="store-label">Download on the</span>
+                                <span class="store-name">App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-play-store">
+                            <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                            </svg>
+                            <div class="store-text">
+                                <span class="store-label">GET IT ON</span>
+                                <span class="store-name">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <!-- Placeholder for app screenshot - replace with actual screenshot -->
+                                <img src="images/app-screenshot.png" alt="Brainbank App Screenshot" class="screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="screenshot-placeholder">
+                                    <div class="placeholder-content">
+                                        <img src="images/logo.png" alt="Brainbank" class="placeholder-logo">
+                                        <p>Add app screenshot here</p>
+                                        <small>Save as images/app-screenshot.png</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Features Section -->
         <section id="features" class="features">
-            <h2>Why Choose Brainbank?</h2>
-            <div class="feature-grid">
+            <h2>Powerful Features for Effective Learning</h2>
+            <div class="features-row">
                 <div class="feature-card">
-                    <h3>🧠 FSRS Algorithm</h3>
-                    <p>Powered by the cutting-edge Free Spaced Repetition Scheduler for optimal learning intervals.</p>
+                    <div class="feature-icon-large">🎯</div>
+                    <h3>Multiple Card Types</h3>
+                    <p>Create single-sided, double-sided, and cloze deletion cards to match your learning style.</p>
                 </div>
+
                 <div class="feature-card">
-                    <h3>📊 Track Your Progress</h3>
-                    <p>Visualize your learning journey with detailed statistics and performance metrics.</p>
+                    <div class="feature-icon-large">📈</div>
+                    <h3>Smart Analytics</h3>
+                    <p>Track your progress with detailed statistics, heatmaps, and memory curve visualizations.</p>
                 </div>
+
                 <div class="feature-card">
-                    <h3>🎯 Multiple Card Types</h3>
-                    <p>Support for single-sided, double-sided, and cloze deletion cards.</p>
+                    <div class="feature-icon-large">⚡</div>
+                    <h3>Practice Modes</h3>
+                    <p>Study due cards, review learning cards, or practice mastered material - you're in control.</p>
                 </div>
+
                 <div class="feature-card">
-                    <h3>🔥 Streak Tracking</h3>
-                    <p>Build habits and stay motivated with daily streak tracking.</p>
+                    <div class="feature-icon-large">🔔</div>
+                    <h3>Smart Reminders</h3>
+                    <p>Never miss a review with customizable notifications and quiet hours support.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-large">🌙</div>
+                    <h3>Dark Mode</h3>
+                    <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-large">☁️</div>
+                    <h3>Cloud Sync</h3>
+                    <p>Your cards are safely stored in the cloud and synced across all your devices.</p>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Cards</h3>
-                    <p>Add the information you want to learn using our flexible card system.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Study Daily</h3>
-                    <p>Review cards as they become due based on your performance.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Master the Material</h3>
-                    <p>The FSRS algorithm optimizes your review schedule for maximum retention.</p>
+        <!-- Algorithm Section -->
+        <section id="algorithm" class="algorithm">
+            <div class="algorithm-container">
+                <div class="algorithm-content">
+                    <h2>Powered by the FSRS Algorithm</h2>
+                    <p class="algorithm-intro">Brainbank uses the Free Spaced Repetition Scheduler (FSRS), a cutting-edge algorithm that outperforms traditional methods like SM-2.</p>
+
+                    <div class="algorithm-features">
+                        <div class="algo-feature">
+                            <div class="algo-icon">🎓</div>
+                            <div class="algo-text">
+                                <h4>Machine Learning Optimization</h4>
+                                <p>FSRS uses advanced machine learning to predict the optimal review time for each card based on your performance.</p>
+                            </div>
+                        </div>
+
+                        <div class="algo-feature">
+                            <div class="algo-icon">⏱️</div>
+                            <div class="algo-text">
+                                <h4>Precise Scheduling</h4>
+                                <p>Unlike fixed-interval systems, FSRS calculates exact review times down to the hour, maximizing retention efficiency.</p>
+                            </div>
+                        </div>
+
+                        <div class="algo-feature">
+                            <div class="algo-icon">📊</div>
+                            <div class="algo-text">
+                                <h4>Difficulty & Stability Tracking</h4>
+                                <p>The algorithm tracks both card difficulty and memory stability to create personalized learning schedules.</p>
+                            </div>
+                        </div>
+
+                        <div class="algo-feature">
+                            <div class="algo-icon">🔬</div>
+                            <div class="algo-text">
+                                <h4>Research-Backed</h4>
+                                <p>FSRS is based on extensive research in cognitive science and has been proven to improve long-term retention.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-stats">
+                        <div class="stat">
+                            <div class="stat-value">90%</div>
+                            <div class="stat-label">Target Retention Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Rating Options</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">∞</div>
+                            <div class="stat-label">Adaptive Learning</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Download Section -->
         <section id="download" class="download">
-            <h2>Get Started Today</h2>
-            <p>Available on iOS and Android</p>
+            <h2>Start Learning Smarter Today</h2>
+            <p>Available now on iOS and Android</p>
             <div class="download-buttons">
-                <a href="#" class="btn btn-app-store">Download on the App Store</a>
-                <a href="#" class="btn btn-play-store">Get it on Google Play</a>
+                <a href="#" class="btn btn-app-store-large">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    <div class="store-text">
+                        <span class="store-label">Download on the</span>
+                        <span class="store-name">App Store</span>
+                    </div>
+                </a>
+                <a href="#" class="btn btn-play-store-large">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                    </svg>
+                    <div class="store-text">
+                        <span class="store-label">GET IT ON</span>
+                        <span class="store-name">Google Play</span>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
