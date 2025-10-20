@@ -318,6 +318,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .features-phone {
@@ -325,6 +326,16 @@ main {
     top: 120px;
     display: flex;
     justify-content: center;
+}
+
+.features-phone .phone-frame {
+    width: 240px;
+    height: 490px;
+}
+
+.features-phone .phone-notch {
+    width: 100px;
+    height: 24px;
 }
 
 .feature-card {
@@ -464,6 +475,66 @@ main {
     font-size: 0.95rem;
 }
 
+/* Analytics Section */
+.analytics {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #1f0e35 0%, #150a25 50%, #0f172a 100%);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.analytics h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: #f1f5f9;
+}
+
+.analytics-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.analytics-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.analytics-card {
+    background: linear-gradient(145deg, #2a1a4d, #1a1235);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.analytics-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.8);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
+}
+
+.analytics-icon-large {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.5rem;
+    color: #a78bfa;
+}
+
+.analytics-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #f1f5f9;
+}
+
+.analytics-card p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
 /* Download Section */
 .download {
     text-align: center;
@@ -598,8 +669,22 @@ footer {
 
     .features h2,
     .algorithm-content h2,
+    .analytics h2,
     .download h2 {
         font-size: 1.75rem;
+    }
+
+    .analytics {
+        padding: 3rem 1rem;
+    }
+
+    .analytics-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .analytics-card {
+        padding: 2rem 1.5rem;
     }
 
     .features-container {
@@ -839,6 +924,35 @@ footer {
 
     .stat-label {
         font-size: 0.7rem;
+    }
+
+    .analytics {
+        padding: 2.5rem 0.5rem;
+    }
+
+    .analytics h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .analytics-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .analytics-icon-large {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 1rem;
+    }
+
+    .analytics-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .analytics-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .download {
