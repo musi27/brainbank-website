@@ -347,7 +347,7 @@ main {
 /* Features Section */
 .features {
     padding: 6rem 2rem 0 2rem;
-    background: linear-gradient(180deg, #0a1428 0%, #0f1635 50%, #130f2a 100%);
+    background: linear-gradient(180deg, #0f172a 0%, #0f1635 50%, #130f2a 100%);
     width: 100%;
     overflow-x: hidden;
 }
@@ -676,7 +676,7 @@ main {
 /* Analytics Section */
 .analytics {
     padding: 6rem 2rem 0 2rem;
-    background: linear-gradient(180deg, #1f0e35 0%, #150a25 50%, #0f172a 100%);
+    background: linear-gradient(180deg, #1f0e35 0%, #150a25 50%, #030617 100%);
     width: 100%;
     overflow-x: hidden;
 }
@@ -737,21 +737,46 @@ main {
 .download {
     text-align: center;
     padding: 6rem 2rem;
-    background-color: #0f172a;
+    background: linear-gradient(180deg, #030617 0%, #020510 100%);
     width: 100%;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.download h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #f1f5f9;
+.download-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.download p {
+.download-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+}
+
+.download-title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.download-subtitle {
     color: #cbd5e1;
-    margin-bottom: 3rem;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0 0 3rem 0;
 }
 
 .download-buttons {
@@ -759,6 +784,13 @@ main {
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.download-copyright {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 .btn-app-store-large,
@@ -777,14 +809,6 @@ main {
     font-size: 1.3rem;
 }
 
-/* Footer */
-footer {
-    background-color: #1e293b;
-    text-align: center;
-    padding: 1rem;
-    color: #94a3b8;
-    border-top: 1px solid #334155;
-}
 
 /* Icon Styles */
 .icon {
@@ -840,6 +864,8 @@ footer {
         display: block;
         padding: 0.75rem 1rem;
         background-color: #030617;
+        min-height: 80px;
+        height: 80px;
     }
 
     .logo-img {
@@ -1077,6 +1103,35 @@ footer {
 
     .download {
         padding: 3rem 1rem;
+    }
+
+    .download-branding {
+        display: none;
+    }
+
+    .download-buttons {
+        gap: 1.95rem;
+    }
+
+    .btn-app-store-large,
+    .btn-play-store-large {
+        padding: 1.5rem 2.5rem;
+    }
+
+    .btn-app-store-large .store-icon,
+    .btn-play-store-large .store-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-app-store-large .store-name,
+    .btn-play-store-large .store-name {
+        font-size: 1.4rem;
+    }
+
+    .btn-app-store-large .store-label,
+    .btn-play-store-large .store-label {
+        font-size: 0.8rem;
     }
 }
 
@@ -1318,8 +1373,14 @@ footer {
         margin-bottom: 2rem;
     }
 
+    .analytics-row {
+        justify-items: center;
+    }
+
     .analytics-card {
         padding: 1.5rem 1rem;
+        width: 85vw;
+        max-width: 85vw;
     }
 
     .analytics-icon-large {
@@ -1339,39 +1400,44 @@ footer {
     }
 
     .download {
-        padding: 2.5rem 0.5rem;
+        padding: 1rem 0.5rem 2.5rem 0.5rem;
     }
 
-    .download h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.75rem;
+    .download-branding {
+        display: none;
     }
 
-    .download p {
-        font-size: 0.9rem;
-        margin-bottom: 2rem;
-        padding: 0 0.5rem;
+    .download-subtitle {
+        margin: 0 0 1.2rem 0;
     }
 
     .download-buttons {
-        gap: 0.75rem;
+        gap: 1.95rem;
         padding: 0 0.5rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     .btn-app-store-large,
     .btn-play-store-large {
-        padding: 0.75rem 1.25rem;
+        padding: 1.5rem 2.5rem;
+        width: 280px;
     }
 
     .btn-app-store-large .store-icon,
     .btn-play-store-large .store-icon {
-        width: 28px;
-        height: 28px;
+        width: 40px;
+        height: 40px;
     }
 
     .btn-app-store-large .store-name,
     .btn-play-store-large .store-name {
-        font-size: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .btn-app-store-large .store-label,
+    .btn-play-store-large .store-label {
+        font-size: 0.8rem;
     }
 
     footer {
