@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brainbank - Master Anything with Spaced Repetition</title>
     <meta name="description" content="Brainbank is a powerful spaced repetition app that helps you learn and retain information efficiently using the FSRS algorithm.">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -31,6 +32,10 @@
         <section class="hero">
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-branding">
+                        <img src="images/logo.png" alt="Brainbank Logo" class="hero-logo">
+                        <h2 class="hero-title">Brainbank</h2>
+                    </div>
                     <h1>Master Anything with Spaced Repetition</h1>
                     <p class="hero-description">Brainbank uses the scientifically-proven FSRS algorithm to optimize your learning schedule. Study smarter, remember longer, and achieve your learning goals faster.</p>
 
@@ -46,6 +51,10 @@
                         <div class="hero-feature">
                             <ion-icon name="flame-outline" class="feature-icon"></ion-icon>
                             <span>Streak Building</span>
+                        </div>
+                        <div class="hero-feature">
+                            <ion-icon name="albums-outline" class="feature-icon"></ion-icon>
+                            <span>Custom Decks</span>
                         </div>
                     </div>
 
@@ -118,37 +127,37 @@
             <h2>Powerful Features for Effective Learning</h2>
             <div class="features-container">
                 <div class="features-row">
-                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                <div class="feature-card" data-feature="cloze">
                     <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
                     <h3>Cloze Deletion</h3>
                     <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
                 </div>
 
-                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                <div class="feature-card" data-feature="cards-at-risk">
                     <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
                     <h3>Cards at Risk</h3>
                     <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
                 </div>
 
-                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                <div class="feature-card" data-feature="decks">
                     <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
                     <h3>Customizable Decks</h3>
                     <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
                 </div>
 
-                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                <div class="feature-card" data-feature="quiz">
                     <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
                     <h3>Quiz Modes</h3>
                     <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
                 </div>
 
-                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                <div class="feature-card" data-feature="study">
                     <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
                     <h3>Study by Deck</h3>
                     <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
                 </div>
 
-                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                <div class="feature-card" data-feature="dark-mode">
                     <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
                     <h3>Dark Mode</h3>
                     <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
@@ -313,6 +322,54 @@
         document.addEventListener('DOMContentLoaded', function() {
             const featureCards = document.querySelectorAll('.feature-card');
             const featurePreview = document.getElementById('feature-preview');
+            const phoneScreen = featurePreview.parentElement;
+
+            // Feature placeholders
+            const featurePlaceholders = {
+                'cloze': {
+                    icon: 'text-outline',
+                    title: 'Cloze Deletion',
+                    description: 'Fill-in-the-blank cards'
+                },
+                'cards-at-risk': {
+                    icon: 'warning-outline',
+                    title: 'Cards at Risk',
+                    description: 'Smart review alerts'
+                },
+                'decks': {
+                    icon: 'layers-outline',
+                    title: 'Customizable Decks',
+                    description: 'Organized learning'
+                },
+                'quiz': {
+                    icon: 'game-controller-outline',
+                    title: 'Quiz Modes',
+                    description: 'Multiple study options'
+                },
+                'study': {
+                    icon: 'folder-outline',
+                    title: 'Study by Deck',
+                    description: 'Focused practice'
+                },
+                'dark-mode': {
+                    icon: 'moon-outline',
+                    title: 'Dark Mode',
+                    description: 'Easy on the eyes'
+                }
+            };
+
+            function updatePreview(feature) {
+                const placeholder = featurePlaceholders[feature];
+                if (placeholder) {
+                    phoneScreen.innerHTML = `
+                        <div class="feature-placeholder">
+                            <ion-icon name="${placeholder.icon}" class="placeholder-icon"></ion-icon>
+                            <h3 class="placeholder-title">${placeholder.title}</h3>
+                            <p class="placeholder-description">${placeholder.description}</p>
+                        </div>
+                    `;
+                }
+            }
 
             featureCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
@@ -322,17 +379,17 @@
                     // Add active class to hovered card
                     this.classList.add('active');
 
-                    // Update the screenshot
-                    const screenshot = this.getAttribute('data-screenshot');
-                    if (screenshot && featurePreview) {
-                        featurePreview.src = screenshot;
-                    }
+                    // Update the preview
+                    const feature = this.getAttribute('data-feature');
+                    updatePreview(feature);
                 });
             });
 
             // Set first card as active on page load
             if (featureCards.length > 0) {
                 featureCards[0].classList.add('active');
+                const firstFeature = featureCards[0].getAttribute('data-feature');
+                updatePreview(firstFeature);
             }
         });
     </script>
