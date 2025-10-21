@@ -117,47 +117,42 @@
         <section id="features" class="features">
             <h2>Powerful Features for Effective Learning</h2>
             <div class="features-container">
-                <div>
-                    <div class="features-row">
-                        <div class="features-carousel">
-                            <div class="feature-card" data-screenshot="images/app-screenshot.png">
-                                <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Cloze Deletion</h3>
-                                <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
-                            </div>
+                <div class="features-row">
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                    <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
+                    <h3>Cloze Deletion</h3>
+                    <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
+                </div>
 
-                            <div class="feature-card" data-screenshot="images/app-screenshot.png">
-                                <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Cards at Risk</h3>
-                                <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
-                            </div>
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                    <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
+                    <h3>Cards at Risk</h3>
+                    <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
+                </div>
 
-                            <div class="feature-card" data-screenshot="images/app-screenshot.png">
-                                <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Customizable Decks</h3>
-                                <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
-                            </div>
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                    <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
+                    <h3>Customizable Decks</h3>
+                    <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
+                </div>
 
-                            <div class="feature-card" data-screenshot="images/app-screenshot.png">
-                                <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Quiz Modes</h3>
-                                <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
-                            </div>
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                    <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
+                    <h3>Quiz Modes</h3>
+                    <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
+                </div>
 
-                            <div class="feature-card" data-screenshot="images/app-screenshot.png">
-                                <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Study by Deck</h3>
-                                <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
-                            </div>
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                    <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
+                    <h3>Study by Deck</h3>
+                    <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
+                </div>
 
-                            <div class="feature-card" data-screenshot="images/app-screenshot.png">
-                                <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Dark Mode</h3>
-                                <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-dots" id="carousel-dots"></div>
+                <div class="feature-card" data-screenshot="images/app-screenshot.png">
+                    <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
+                    <h3>Dark Mode</h3>
+                    <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
+                </div>
                 </div>
 
                 <!-- iPhone Mockup -->
@@ -314,91 +309,31 @@
     </footer>
 
     <script>
-        // Feature carousel with auto-slide
+        // Feature card hover interactions
         document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.features-carousel');
             const featureCards = document.querySelectorAll('.feature-card');
             const featurePreview = document.getElementById('feature-preview');
-            const dotsContainer = document.getElementById('carousel-dots');
 
-            let currentIndex = 0;
-            let autoSlideInterval;
-            const autoSlideDelay = 4000; // 4 seconds
-
-            // Create dots
-            featureCards.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.classList.add('carousel-dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(index));
-                dotsContainer.appendChild(dot);
-            });
-
-            const dots = document.querySelectorAll('.carousel-dot');
-
-            function updateCarousel() {
-                const cardWidth = featureCards[0].offsetWidth;
-                const gap = 24; // 1.5rem in pixels
-                const offset = currentIndex * (cardWidth + gap);
-                carousel.style.transform = `translateX(-${offset}px)`;
-
-                // Update active states
-                featureCards.forEach((card, index) => {
-                    card.classList.toggle('active', index === currentIndex);
-                });
-
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-
-                // Update screenshot
-                const screenshot = featureCards[currentIndex].getAttribute('data-screenshot');
-                if (screenshot && featurePreview) {
-                    featurePreview.src = screenshot;
-                }
-            }
-
-            function goToSlide(index) {
-                currentIndex = index;
-                updateCarousel();
-                resetAutoSlide();
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % featureCards.length;
-                updateCarousel();
-            }
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-
-            function resetAutoSlide() {
-                stopAutoSlide();
-                startAutoSlide();
-            }
-
-            // Card hover interactions
-            featureCards.forEach((card, index) => {
+            featureCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    goToSlide(index);
+                    // Remove active class from all cards
+                    featureCards.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to hovered card
+                    this.classList.add('active');
+
+                    // Update the screenshot
+                    const screenshot = this.getAttribute('data-screenshot');
+                    if (screenshot && featurePreview) {
+                        featurePreview.src = screenshot;
+                    }
                 });
             });
 
-            // Pause auto-slide on hover
-            carousel.addEventListener('mouseenter', stopAutoSlide);
-            carousel.addEventListener('mouseleave', startAutoSlide);
-
-            // Initialize
-            updateCarousel();
-            startAutoSlide();
-
-            // Handle window resize
-            window.addEventListener('resize', updateCarousel);
+            // Set first card as active on page load
+            if (featureCards.length > 0) {
+                featureCards[0].classList.add('active');
+            }
         });
     </script>
 </body>

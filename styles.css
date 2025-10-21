@@ -306,28 +306,19 @@ main {
 }
 
 .features-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 240px;
-    gap: 3rem;
+    grid-template-columns: 1fr 320px;
+    gap: 4rem;
     align-items: start;
 }
 
 .features-row {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.features-carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-}
-
-.features-carousel.sliding {
-    transition: transform 0.5s ease-in-out;
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .features-phone {
@@ -349,14 +340,12 @@ main {
 
 .feature-card {
     background: linear-gradient(145deg, #1a2d4d, #12213d);
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
     border-radius: 16px;
     border: 1px solid rgba(59, 130, 246, 0.3);
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     text-align: center;
     cursor: pointer;
-    min-width: 280px;
-    flex-shrink: 0;
 }
 
 .feature-card:hover {
@@ -387,34 +376,6 @@ main {
     color: #cbd5e1;
     line-height: 1.6;
     font-size: 0.9rem;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 2rem;
-}
-
-.carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(59, 130, 246, 0.3);
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    border: none;
-    padding: 0;
-}
-
-.carousel-dot:hover {
-    background: rgba(96, 165, 250, 0.6);
-    transform: scale(1.2);
-}
-
-.carousel-dot.active {
-    background: rgba(96, 165, 250, 1);
-    transform: scale(1.3);
 }
 
 /* Algorithm Section */
