@@ -798,12 +798,12 @@ footer {
     }
 
     .logo-img {
-        width: 60px;
-        height: 60px;
+        width: 57px;
+        height: 57px;
     }
 
     .logo {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     main {
@@ -893,14 +893,15 @@ footer {
     }
 
     .carousel-arrow {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
         background: rgba(59, 130, 246, 0.6);
+        top: 20%;
     }
 
     .carousel-arrow ion-icon {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
 
     .carousel-arrow-left {
@@ -912,7 +913,18 @@ footer {
     }
 
     .carousel-dots {
-        display: none;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 1rem 0;
+    }
+
+    .carousel-dot {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .carousel-dot.active {
+        background: rgba(255, 255, 255, 1);
     }
 
     .feature-card {
@@ -988,12 +1000,12 @@ footer {
     }
 
     .logo {
-        font-size: 1.1rem;
+        font-size: 2rem;
     }
 
     .logo-img {
-        width: 28px;
-        height: 28px;
+        width: 57px;
+        height: 57px;
     }
 
     nav ul {
@@ -1030,12 +1042,14 @@ footer {
     .hero-feature:nth-child(3) {
         justify-content: flex-start;
         flex: 0 0 48%;
+        padding-left: 1rem;
     }
 
     .hero-feature:nth-child(2),
     .hero-feature:nth-child(4) {
         justify-content: flex-end;
         flex: 0 0 48%;
+        padding-right: 1rem;
     }
 
     .hero-feature {
