@@ -196,62 +196,49 @@
             <div class="algorithm-container">
                 <div class="algorithm-content">
                     <h2>Powered by the FSRS Algorithm</h2>
-                    <p class="algorithm-intro">Brainbank uses the Free Spaced Repetition Scheduler (FSRS), a cutting-edge algorithm that outperforms traditional methods like SM-2.</p>
+                    <p class="algorithm-intro">Brainbank uses the Free Spaced Repetition Scheduler (FSRS), a modern machine learning-based algorithm that adapts to your unique learning patterns for optimal retention.</p>
 
                     <div class="algorithm-features">
-                        <div class="algo-feature">
-                            <ion-icon name="school-outline" class="algo-icon"></ion-icon>
-                            <div class="algo-text">
-                                <h4>Machine Learning Optimization</h4>
-                                <p>FSRS uses advanced machine learning to predict the optimal review time for each card based on your performance.</p>
+                        <!-- Row 1: Card Left, iPhone Right -->
+                        <div class="algo-row">
+                            <div class="algo-card">
+                                <div class="algo-card-header">
+                                    <ion-icon name="git-branch-outline" class="algo-card-icon"></ion-icon>
+                                    <h3>Personalized Learning Paths</h3>
+                                </div>
+                                <p>Each card maintains separate difficulty and stability metrics that evolve with every review. Cards progress through distinct states (New → Learning → Review → Mastered) with the algorithm detecting at-risk cards before you forget them.</p>
+                            </div>
+                            <div class="algo-phone">
+                                <img src="images/algo-states.png" alt="Card States" class="algo-image">
                             </div>
                         </div>
 
-                        <div class="algo-feature">
-                            <ion-icon name="time-outline" class="algo-icon"></ion-icon>
-                            <div class="algo-text">
-                                <h4>Precise Scheduling</h4>
-                                <p>Unlike fixed-interval systems, FSRS calculates exact review times down to the hour, maximizing retention efficiency.</p>
+                        <!-- Row 2: Card Left, iPhone Right -->
+                        <div class="algo-row">
+                            <div class="algo-card">
+                                <div class="algo-card-header">
+                                    <ion-icon name="analytics-outline" class="algo-card-icon"></ion-icon>
+                                    <h3>Intelligent Prediction & Scheduling</h3>
+                                </div>
+                                <p>FSRS analyzes your performance across four confidence levels (Again, Hard, Good, Easy) to predict optimal review times. Reviews are scheduled with precision based on memory stability and retrievability, ensuring you see cards at the perfect moment before forgetting.</p>
+                            </div>
+                            <div class="algo-phone">
+                                <img src="images/algo-reviews.png" alt="Answer Breakdown" class="algo-image" loading="eager" style="background: rgba(255,0,0,0.1);">
                             </div>
                         </div>
 
-                        <div class="algo-feature">
-                            <ion-icon name="stats-chart-outline" class="algo-icon"></ion-icon>
-                            <div class="algo-text">
-                                <h4>Difficulty & Stability Tracking</h4>
-                                <p>The algorithm tracks both card difficulty and memory stability to create personalized learning schedules.</p>
+                        <!-- Row 3: Card Left, iPhone Right -->
+                        <div class="algo-row">
+                            <div class="algo-card">
+                                <div class="algo-card-header">
+                                    <ion-icon name="options-outline" class="algo-card-icon"></ion-icon>
+                                    <h3>Complete Customization</h3>
+                                </div>
+                                <p>Customize learning steps, graduating intervals (1-30 days), maximum intervals (30-730 days), and interval multipliers for Hard/Easy ratings. Fine-tune 19 FSRS weights (w0-w18) that control memory prediction, difficulty calculations, and retention optimization.</p>
                             </div>
-                        </div>
-
-                        <div class="algo-feature">
-                            <ion-icon name="flask-outline" class="algo-icon"></ion-icon>
-                            <div class="algo-text">
-                                <h4>Research-Backed</h4>
-                                <p>FSRS is based on extensive research in cognitive science and has been proven to improve long-term retention.</p>
+                            <div class="algo-phone">
+                                <img src="images/algo-settings.png" alt="FSRS Settings" class="algo-image">
                             </div>
-                        </div>
-
-                        <div class="algo-feature">
-                            <ion-icon name="settings-outline" class="algo-icon"></ion-icon>
-                            <div class="algo-text">
-                                <h4>Customizable Parameters</h4>
-                                <p>Fine-tune the FSRS algorithm with customizable parameters to match your learning preferences and optimize retention.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="algorithm-stats">
-                        <div class="stat">
-                            <div class="stat-value">90%</div>
-                            <div class="stat-label">Target Retention Rate</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">4</div>
-                            <div class="stat-label">Rating Options</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">∞</div>
-                            <div class="stat-label">Adaptive Learning</div>
                         </div>
                     </div>
                 </div>
