@@ -360,20 +360,118 @@ main {
 }
 
 .features-container {
-    max-width: 1400px;
+    max-width: 700px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 4rem;
-    align-items: start;
+    grid-template-columns: 1fr 240px;
+    gap: 2rem;
+    align-items: center;
 }
 
 .features-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    grid-template-rows: repeat(2, 1fr);
-    height: 490px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(59, 130, 246, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s, transform 0.2s;
+    color: white;
+}
+
+.carousel-arrow:hover {
+    background: rgba(59, 130, 246, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow ion-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-arrow-left {
+    left: 10px;
+}
+
+.carousel-arrow-right {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 0;
+    transition: transform 0.6s ease-in-out;
+    height: 100%;
+    align-items: center;
+}
+
+.carousel-track .feature-card {
+    min-width: 100%;
+    max-width: 100%;
+    height: 80%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+    box-sizing: border-box;
 }
 
 .features-phone {
@@ -696,6 +794,16 @@ footer {
     header {
         display: block;
         padding: 0.75rem 1rem;
+        background-color: #030617;
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 2.2rem;
     }
 
     main {
@@ -756,17 +864,84 @@ footer {
         gap: 2rem;
     }
 
-    .features-phone {
-        display: none;
+    .features-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .features-row {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
+        height: auto;
+        order: 2;
+    }
+
+    .features-phone {
+        display: flex;
+        order: 1;
+        position: relative;
+        top: 0;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .carousel-container {
+        padding: 0;
+    }
+
+    .carousel-track .feature-card {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .carousel-arrow {
+        width: 32px;
+        height: 32px;
+        background: rgba(59, 130, 246, 0.6);
+    }
+
+    .carousel-arrow ion-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .carousel-arrow-left {
+        left: 5px;
+    }
+
+    .carousel-arrow-right {
+        right: 5px;
+    }
+
+    .carousel-dots {
+        display: none;
     }
 
     .feature-card {
-        padding: 1.75rem 1.25rem;
+        padding: 0 40px !important;
+        height: auto !important;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .feature-card:hover {
+        transform: none;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    .feature-card.active {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    .features-phone .phone-frame {
+        width: 200px;
+        height: 408px;
+    }
+
+    .features-phone .phone-screen {
+        background: #030617;
     }
 
     .phone-mockup {
@@ -847,6 +1022,20 @@ footer {
     .hero-features {
         gap: 0.75rem;
         margin-bottom: 1.5rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .hero-feature:nth-child(1),
+    .hero-feature:nth-child(3) {
+        justify-content: flex-start;
+        flex: 0 0 48%;
+    }
+
+    .hero-feature:nth-child(2),
+    .hero-feature:nth-child(4) {
+        justify-content: flex-end;
+        flex: 0 0 48%;
     }
 
     .hero-feature {

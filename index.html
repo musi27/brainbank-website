@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brainbank - Master Anything with Spaced Repetition</title>
     <meta name="description" content="Brainbank is a powerful spaced repetition app that helps you learn and retain information efficiently using the FSRS algorithm.">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -127,41 +127,54 @@
             <h2>Powerful Features for Effective Learning</h2>
             <div class="features-container">
                 <div class="features-row">
-                <div class="feature-card" data-feature="cloze">
-                    <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
-                    <h3>Cloze Deletion</h3>
-                    <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
-                </div>
+                    <div class="carousel-container">
+                        <button class="carousel-arrow carousel-arrow-left" aria-label="Previous">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <button class="carousel-arrow carousel-arrow-right" aria-label="Next">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
 
-                <div class="feature-card" data-feature="cards-at-risk">
-                    <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
-                    <h3>Cards at Risk</h3>
-                    <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
-                </div>
+                        <div class="carousel-track">
+                            <div class="feature-card" data-feature="cloze">
+                                <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Cloze Deletion</h3>
+                                <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
+                            </div>
 
-                <div class="feature-card" data-feature="decks">
-                    <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
-                    <h3>Customizable Decks</h3>
-                    <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
-                </div>
+                            <div class="feature-card" data-feature="cards-at-risk">
+                                <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Cards at Risk</h3>
+                                <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
+                            </div>
 
-                <div class="feature-card" data-feature="quiz">
-                    <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
-                    <h3>Quiz Modes</h3>
-                    <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
-                </div>
+                            <div class="feature-card" data-feature="decks">
+                                <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Customizable Decks</h3>
+                                <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
+                            </div>
 
-                <div class="feature-card" data-feature="study">
-                    <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
-                    <h3>Study by Deck</h3>
-                    <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
-                </div>
+                            <div class="feature-card" data-feature="quiz">
+                                <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Quiz Modes</h3>
+                                <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
+                            </div>
 
-                <div class="feature-card" data-feature="dark-mode">
-                    <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
-                    <h3>Dark Mode</h3>
-                    <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
-                </div>
+                            <div class="feature-card" data-feature="study">
+                                <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Study by Deck</h3>
+                                <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="dark-mode">
+                                <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Dark Mode</h3>
+                                <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-dots"></div>
+                    </div>
                 </div>
 
                 <!-- iPhone Mockup -->
@@ -318,40 +331,68 @@
     </footer>
 
     <script>
-        // Feature card hover interactions
+        // Feature card carousel and interactions
         document.addEventListener('DOMContentLoaded', function() {
             const featureCards = document.querySelectorAll('.feature-card');
             const featurePreview = document.getElementById('feature-preview');
             const phoneScreen = featurePreview.parentElement;
+            const carouselTrack = document.querySelector('.carousel-track');
+            const carouselDotsContainer = document.querySelector('.carousel-dots');
+            const leftArrow = document.querySelector('.carousel-arrow-left');
+            const rightArrow = document.querySelector('.carousel-arrow-right');
 
-            // Feature placeholders
-            const featurePlaceholders = {
+            let currentIndex = 0;
+            let autoSlideInterval;
+
+            // Create dots
+            featureCards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    stopAutoSlide();
+                    slideCarousel(index);
+                    startAutoSlide();
+                });
+                carouselDotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.carousel-dot');
+
+            // Feature screenshots and placeholders
+            const featureData = {
                 'cloze': {
+                    image: 'images/feature-cloze.png',
                     icon: 'text-outline',
                     title: 'Cloze Deletion',
                     description: 'Fill-in-the-blank cards'
                 },
                 'cards-at-risk': {
+                    image: 'images/feature-cards-at-risk.png',
                     icon: 'warning-outline',
                     title: 'Cards at Risk',
                     description: 'Smart review alerts'
                 },
                 'decks': {
+                    image: 'images/feature-decks.png',
                     icon: 'layers-outline',
                     title: 'Customizable Decks',
                     description: 'Organized learning'
                 },
                 'quiz': {
+                    image: 'images/feature-quiz.png',
                     icon: 'game-controller-outline',
                     title: 'Quiz Modes',
                     description: 'Multiple study options'
                 },
                 'study': {
+                    image: 'images/feature-study.png',
                     icon: 'folder-outline',
                     title: 'Study by Deck',
                     description: 'Focused practice'
                 },
                 'dark-mode': {
+                    image: 'images/feature-dark-mode.png',
                     icon: 'moon-outline',
                     title: 'Dark Mode',
                     description: 'Easy on the eyes'
@@ -359,38 +400,170 @@
             };
 
             function updatePreview(feature) {
-                const placeholder = featurePlaceholders[feature];
-                if (placeholder) {
-                    phoneScreen.innerHTML = `
-                        <div class="feature-placeholder">
-                            <ion-icon name="${placeholder.icon}" class="placeholder-icon"></ion-icon>
-                            <h3 class="placeholder-title">${placeholder.title}</h3>
-                            <p class="placeholder-description">${placeholder.description}</p>
-                        </div>
-                    `;
+                const data = featureData[feature];
+                if (data) {
+                    // Try to load the image first
+                    const img = new Image();
+                    img.onload = function() {
+                        phoneScreen.innerHTML = `<img src="${data.image}" alt="${data.title}" class="screenshot">`;
+                    };
+                    img.onerror = function() {
+                        // Fallback to placeholder if image doesn't exist
+                        phoneScreen.innerHTML = `
+                            <div class="feature-placeholder">
+                                <ion-icon name="${data.icon}" class="placeholder-icon"></ion-icon>
+                                <h3 class="placeholder-title">${data.title}</h3>
+                                <p class="placeholder-description">${data.description}</p>
+                            </div>
+                        `;
+                    };
+                    img.src = data.image;
                 }
             }
 
-            featureCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    // Remove active class from all cards
-                    featureCards.forEach(c => c.classList.remove('active'));
+            function updateSlidePosition() {
+                // Calculate the slide amount - each card is 100% width with no gap
+                // Use the features-row width to ensure proper alignment
+                const rowElement = document.querySelector('.features-row');
+                const containerWidth = rowElement.offsetWidth;
+                const slideAmount = containerWidth * currentIndex;
 
-                    // Add active class to hovered card
-                    this.classList.add('active');
+                carouselTrack.style.transform = `translateX(-${slideAmount}px)`;
 
-                    // Update the preview
-                    const feature = this.getAttribute('data-feature');
+                // Update active state and preview
+                featureCards.forEach(c => c.classList.remove('active'));
+                if (featureCards[currentIndex]) {
+                    featureCards[currentIndex].classList.add('active');
+                    const feature = featureCards[currentIndex].getAttribute('data-feature');
                     updatePreview(feature);
+                }
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function slideCarousel(index) {
+                // Normalize index
+                if (index >= featureCards.length) {
+                    index = 0;
+                } else if (index < 0) {
+                    index = featureCards.length - 1;
+                }
+
+                currentIndex = index;
+                updateSlidePosition();
+            }
+
+            function startAutoSlide() {
+                // Clear any existing interval first
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+
+                autoSlideInterval = setInterval(() => {
+                    currentIndex++;
+                    if (currentIndex >= featureCards.length) {
+                        currentIndex = 0;
+                    }
+                    updateSlidePosition();
+                }, 3000);
+            }
+
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                }
+            }
+
+            // Arrow click handlers
+            leftArrow.addEventListener('click', () => {
+                stopAutoSlide();
+                slideCarousel(currentIndex - 1);
+                startAutoSlide();
+            });
+
+            rightArrow.addEventListener('click', () => {
+                stopAutoSlide();
+                slideCarousel(currentIndex + 1);
+                startAutoSlide();
+            });
+
+            // Hover interactions
+            featureCards.forEach((card, index) => {
+                card.addEventListener('mouseenter', function() {
+                    stopAutoSlide();
+                    slideCarousel(index);
                 });
             });
 
-            // Set first card as active on page load
-            if (featureCards.length > 0) {
-                featureCards[0].classList.add('active');
-                const firstFeature = featureCards[0].getAttribute('data-feature');
-                updatePreview(firstFeature);
+            // Resume auto-slide when mouse leaves the carousel
+            const carouselContainer = document.querySelector('.carousel-container');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseleave', function() {
+                    startAutoSlide();
+                });
             }
+
+            // Touch swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carouselContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carouselContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    stopAutoSlide();
+                    if (diff > 0) {
+                        // Swipe left - next card
+                        slideCarousel(currentIndex + 1);
+                    } else {
+                        // Swipe right - previous card
+                        slideCarousel(currentIndex - 1);
+                    }
+
+                    // Only restart auto-slide on desktop
+                    if (window.innerWidth > 768) {
+                        startAutoSlide();
+                    }
+                }
+            }
+
+            // Initialize
+            if (featureCards.length > 0) {
+                slideCarousel(0);
+
+                // Only auto-slide on desktop
+                if (window.innerWidth > 768) {
+                    startAutoSlide();
+                }
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                updateSlidePosition();
+
+                // Stop auto-slide on mobile, start on desktop
+                if (window.innerWidth <= 768) {
+                    stopAutoSlide();
+                } else {
+                    if (!autoSlideInterval) {
+                        startAutoSlide();
+                    }
+                }
+            });
         });
     </script>
 </body>
