@@ -695,29 +695,80 @@ main {
 }
 
 .analytics-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .analytics-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
 .analytics-card {
-    background: linear-gradient(145deg, #2a1a4d, #1a1235);
-    padding: 2.5rem;
+    background: #020717;
     border-radius: 16px;
     border: 1px solid rgba(139, 92, 246, 0.3);
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .analytics-card:hover {
     transform: translateY(-4px);
     border-color: rgba(167, 139, 250, 0.8);
     box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
+}
+
+.analytics-card-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.analytics-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.analytics-card-image-placeholder {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #1a1235, #2a1a4d);
+}
+
+.analytics-placeholder-icon {
+    width: 64px;
+    height: 64px;
+    color: #a78bfa;
+}
+
+.analytics-card-image-blur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom,
+        rgba(2, 7, 23, 0) 0%,
+        rgba(2, 7, 23, 0.2) 40%,
+        rgba(2, 7, 23, 0.6) 70%,
+        rgba(2, 7, 23, 1) 100%
+    );
+    pointer-events: none;
+}
+
+.analytics-card-content {
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
 }
 
 .analytics-icon-large {

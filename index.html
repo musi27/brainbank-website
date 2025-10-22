@@ -254,15 +254,45 @@
             <div class="analytics-container">
                 <div class="analytics-row">
                     <div class="analytics-card">
-                        <ion-icon name="analytics-outline" class="analytics-icon-large"></ion-icon>
-                        <h3>Smart Analytics</h3>
-                        <p>Track your progress with detailed statistics, heatmaps, and memory curve visualizations to understand your learning patterns.</p>
+                        <div class="analytics-card-image-container">
+                            <img src="images/analytics-calendar.png" alt="Study Activity Calendar" class="analytics-card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="analytics-card-image-placeholder">
+                                <ion-icon name="calendar-outline" class="analytics-placeholder-icon"></ion-icon>
+                            </div>
+                            <div class="analytics-card-image-blur"></div>
+                        </div>
+                        <div class="analytics-card-content">
+                            <h3>Study Activity Calendar</h3>
+                            <p>Visualize your consistency with a color-coded heatmap showing daily study sessions over weeks and months, helping you maintain momentum and identify patterns in your learning routine.</p>
+                        </div>
                     </div>
 
                     <div class="analytics-card">
-                        <ion-icon name="notifications-outline" class="analytics-icon-large"></ion-icon>
-                        <h3>Smart Reminders</h3>
-                        <p>Never miss a review with customizable notifications and quiet hours support tailored to your schedule.</p>
+                        <div class="analytics-card-image-container">
+                            <img src="images/analytics-memory.png" alt="Memory Curve Insights" class="analytics-card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="analytics-card-image-placeholder">
+                                <ion-icon name="trending-up-outline" class="analytics-placeholder-icon"></ion-icon>
+                            </div>
+                            <div class="analytics-card-image-blur"></div>
+                        </div>
+                        <div class="analytics-card-content">
+                            <h3>Memory Curve Insights</h3>
+                            <p>Track how well you retain information over time with FSRS-based retention graphs, revealing the effectiveness of your spaced repetition and when knowledge consolidates into long-term memory.</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <div class="analytics-card-image-container">
+                            <img src="images/analytics-performance.png" alt="Performance Analytics" class="analytics-card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="analytics-card-image-placeholder">
+                                <ion-icon name="stats-chart-outline" class="analytics-placeholder-icon"></ion-icon>
+                            </div>
+                            <div class="analytics-card-image-blur"></div>
+                        </div>
+                        <div class="analytics-card-content">
+                            <h3>Performance Analytics</h3>
+                            <p>Monitor your learning velocity with detailed metrics including retention rate, cards reviewed, average difficulty, and mastery progress across all your decks and study sessions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
