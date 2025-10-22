@@ -139,28 +139,16 @@
                         </button>
 
                         <div class="carousel-track">
-                            <div class="feature-card" data-feature="cloze">
-                                <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Cloze Deletion</h3>
-                                <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
-                            </div>
-
-                            <div class="feature-card" data-feature="cards-at-risk">
-                                <ion-icon name="warning-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Cards at Risk</h3>
-                                <p>Identify cards you're about to forget with smart alerts and prioritized review scheduling.</p>
-                            </div>
-
                             <div class="feature-card" data-feature="decks">
                                 <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
                                 <h3>Customizable Decks</h3>
                                 <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
                             </div>
 
-                            <div class="feature-card" data-feature="quiz">
-                                <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Quiz Modes</h3>
-                                <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
+                            <div class="feature-card" data-feature="cloze">
+                                <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Cloze Deletion</h3>
+                                <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
                             </div>
 
                             <div class="feature-card" data-feature="study">
@@ -169,10 +157,22 @@
                                 <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
                             </div>
 
-                            <div class="feature-card" data-feature="dark-mode">
-                                <ion-icon name="moon-outline" class="feature-icon-large"></ion-icon>
-                                <h3>Dark Mode</h3>
-                                <p>Beautiful dark theme that's easy on your eyes during late-night study sessions.</p>
+                            <div class="feature-card" data-feature="quiz">
+                                <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Quiz Modes</h3>
+                                <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="analytics">
+                                <ion-icon name="stats-chart-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Learning Analytics</h3>
+                                <p>Track your progress with detailed statistics, study heatmaps, memory curves, and performance metrics across all your decks.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="notifications">
+                                <ion-icon name="notifications-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Smart Notifications</h3>
+                                <p>Never miss a review with customizable reminders, quiet hours, and overdue alerts tailored to your schedule.</p>
                             </div>
                         </div>
 
@@ -252,6 +252,12 @@
         <section id="analytics" class="analytics">
             <h2>TRACK YOUR LEARNING JOURNEY</h2>
             <div class="analytics-container">
+                <button class="analytics-arrow analytics-arrow-left" aria-label="Previous">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="analytics-arrow analytics-arrow-right" aria-label="Next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
                 <div class="analytics-row">
                     <div class="analytics-card">
                         <div class="analytics-card-image-container">
@@ -387,11 +393,11 @@
                     title: 'Cloze Deletion',
                     description: 'Fill-in-the-blank cards'
                 },
-                'cards-at-risk': {
-                    image: 'images/feature-cards-at-risk.png',
-                    icon: 'warning-outline',
-                    title: 'Cards at Risk',
-                    description: 'Smart review alerts'
+                'analytics': {
+                    image: 'images/feature-analytics.png',
+                    icon: 'stats-chart-outline',
+                    title: 'Learning Analytics',
+                    description: 'Progress tracking'
                 },
                 'decks': {
                     image: 'images/feature-decks.png',
@@ -411,11 +417,11 @@
                     title: 'Study by Deck',
                     description: 'Focused practice'
                 },
-                'dark-mode': {
-                    image: 'images/feature-dark-mode.png',
-                    icon: 'moon-outline',
-                    title: 'Dark Mode',
-                    description: 'Easy on the eyes'
+                'notifications': {
+                    image: 'images/feature-notifications.png',
+                    icon: 'notifications-outline',
+                    title: 'Smart Notifications',
+                    description: 'Never miss a review'
                 }
             };
 
@@ -587,6 +593,23 @@
                 }
             });
         });
+
+        // Analytics cards horizontal scroll on mobile
+        const analyticsRow = document.querySelector('.analytics-row');
+        const analyticsLeftArrow = document.querySelector('.analytics-arrow-left');
+        const analyticsRightArrow = document.querySelector('.analytics-arrow-right');
+
+        if (analyticsLeftArrow && analyticsRightArrow && analyticsRow) {
+            analyticsLeftArrow.addEventListener('click', () => {
+                const cardWidth = analyticsRow.querySelector('.analytics-card').offsetWidth;
+                analyticsRow.scrollBy({ left: -(cardWidth + 16), behavior: 'smooth' });
+            });
+
+            analyticsRightArrow.addEventListener('click', () => {
+                const cardWidth = analyticsRow.querySelector('.analytics-card').offsetWidth;
+                analyticsRow.scrollBy({ left: cardWidth + 16, behavior: 'smooth' });
+            });
+        }
 
         // Platform-specific download buttons
         function detectPlatform() {
