@@ -6,6 +6,9 @@
     <title>Brainbank - Master Anything with Spaced Repetition</title>
     <meta name="description" content="Brainbank is a powerful spaced repetition app that helps you learn and retain information efficiently using the FSRS algorithm.">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -49,8 +52,8 @@
                             <span>Progress Tracking</span>
                         </div>
                         <div class="hero-feature">
-                            <ion-icon name="flame-outline" class="feature-icon"></ion-icon>
-                            <span>Streak Building</span>
+                            <ion-icon name="layers-outline" class="feature-icon"></ion-icon>
+                            <span>Multiple Card Types</span>
                         </div>
                         <div class="hero-feature">
                             <ion-icon name="albums-outline" class="feature-icon"></ion-icon>
@@ -124,7 +127,7 @@
 
         <!-- Features Section -->
         <section id="features" class="features">
-            <h2>Powerful Features for Effective Learning</h2>
+            <h2>FEATURES FOR SMART LEARNING</h2>
             <div class="features-container">
                 <div class="features-row">
                     <div class="carousel-container">
@@ -195,7 +198,7 @@
         <section id="algorithm" class="algorithm">
             <div class="algorithm-container">
                 <div class="algorithm-content">
-                    <h2>Powered by the FSRS Algorithm</h2>
+                    <h2>POWERED BY THE FSRS ALGORITHM</h2>
                     <p class="algorithm-intro">Brainbank uses the Free Spaced Repetition Scheduler (FSRS), a modern machine learning-based algorithm that adapts to your unique learning patterns for optimal retention.</p>
 
                     <div class="algorithm-features">
@@ -247,7 +250,7 @@
 
         <!-- Analytics Section -->
         <section id="analytics" class="analytics">
-            <h2>Track Your Learning Journey</h2>
+            <h2>TRACK YOUR LEARNING JOURNEY</h2>
             <div class="analytics-container">
                 <div class="analytics-row">
                     <div class="analytics-card">
@@ -267,8 +270,11 @@
 
         <!-- Download Section -->
         <section id="download" class="download">
-            <h2>Start Learning Smarter Today</h2>
-            <p>Available now on iOS and Android</p>
+            <div class="download-branding">
+                <img src="images/logo.png" alt="Brainbank Logo" class="download-logo">
+                <h2 class="download-title">Brainbank</h2>
+            </div>
+            <p class="download-subtitle">Start studying smarter today</p>
             <div class="download-buttons">
                 <a href="#" class="btn btn-app-store-large">
                     <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -310,12 +316,9 @@
                     </div>
                 </a>
             </div>
+            <p class="download-copyright">&copy; 2025 Brainbank. All rights reserved.</p>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Brainbank. All rights reserved.</p>
-    </footer>
 
     <script>
         // Feature card carousel and interactions
@@ -554,6 +557,57 @@
                 }
             });
         });
+
+        // Platform-specific download buttons
+        function detectPlatform() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isMobile = window.innerWidth <= 768;
+
+            if (!isMobile) {
+                // Desktop - show both buttons
+                return 'desktop';
+            }
+
+            // Check for iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            }
+
+            // Check for Android
+            if (/android/i.test(userAgent)) {
+                return 'android';
+            }
+
+            // Default for other mobile devices - show both
+            return 'desktop';
+        }
+
+        // Hide/show buttons based on platform
+        function updateDownloadButtons() {
+            const platform = detectPlatform();
+            const appStoreButtons = document.querySelectorAll('.btn-app-store, .btn-app-store-large');
+            const playStoreButtons = document.querySelectorAll('.btn-play-store, .btn-play-store-large');
+
+            if (platform === 'ios') {
+                // iOS - show only App Store button
+                playStoreButtons.forEach(btn => btn.style.display = 'none');
+                appStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+            } else if (platform === 'android') {
+                // Android - show only Google Play button
+                appStoreButtons.forEach(btn => btn.style.display = 'none');
+                playStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+            } else {
+                // Desktop or other - show both buttons
+                appStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+                playStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', updateDownloadButtons);
+
+        // Update on window resize (in case user rotates device or changes viewport)
+        window.addEventListener('resize', updateDownloadButtons);
     </script>
 </body>
 </html>

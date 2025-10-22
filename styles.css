@@ -357,6 +357,8 @@ main {
     font-size: 2.5rem;
     margin-bottom: 4rem;
     color: #f1f5f9;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: 0.1em;
 }
 
 .features-container {
@@ -549,6 +551,8 @@ main {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: #f1f5f9;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: 0.1em;
 }
 
 .algorithm-intro {
@@ -566,21 +570,21 @@ main {
     flex-direction: column;
     gap: 0;
     margin-bottom: 4rem;
-    max-width: 1002px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .algo-row {
     display: grid;
-    grid-template-columns: 600px 400px;
-    gap: 2px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
     align-items: center;
-    width: 1002px;
+    width: 100%;
 }
 
 .algo-row-reverse {
-    grid-template-columns: 400px 600px;
+    grid-template-columns: 1fr 1.5fr;
 }
 
 .algo-row-reverse .algo-card {
@@ -686,6 +690,8 @@ main {
     font-size: 2.5rem;
     margin-bottom: 4rem;
     color: #f1f5f9;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: 0.1em;
 }
 
 .analytics-container {
@@ -898,12 +904,29 @@ main {
         gap: 1.5rem;
     }
 
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+    }
+
     .hero-content h1 {
         font-size: 1.75rem;
+        order: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        order: 2;
+        margin-bottom: 1.5rem;
     }
 
     .hero-description {
         font-size: 1rem;
+        order: 3;
+    }
+
+    .hero-features {
+        order: 4;
     }
 
     .features {
@@ -915,6 +938,18 @@ main {
     .analytics h2,
     .download h2 {
         font-size: 1.75rem;
+    }
+
+    .features h2 {
+        font-size: 1.3rem;
+    }
+
+    .algorithm-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .analytics h2 {
+        font-size: 1.2rem;
     }
 
     .analytics {
