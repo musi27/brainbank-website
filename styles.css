@@ -1023,11 +1023,11 @@ main {
         display: flex;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
-        gap: 10vw;
+        gap: 5vw;
         padding: 0 5vw;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        width: 100%;
+        width: 100vw;
         margin: 0;
     }
 
