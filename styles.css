@@ -1017,6 +1017,8 @@ main {
     .analytics-container {
         position: relative;
         overflow: hidden;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
     }
 
     .analytics-row {
@@ -1027,7 +1029,7 @@ main {
         padding: 0 5vw;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        width: 100vw;
+        width: 100%;
         margin: 0;
     }
 
