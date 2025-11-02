@@ -12,7 +12,12 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    background-color: #0a0e1a;
+    background: linear-gradient(180deg,
+        #01052f 0%,
+        #032790 50%,
+        #01052f 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
     color: #fff;
     overflow-x: hidden;
     width: 100%;
@@ -21,7 +26,7 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: rgba(1, 5, 47, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
     position: fixed;
@@ -55,6 +60,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -86,7 +92,7 @@ main {
 /* Hero Section */
 .hero {
     padding: 4rem 2rem;
-    background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+    background: transparent;
     width: 100%;
     overflow-x: hidden;
 }
@@ -117,6 +123,7 @@ main {
 .hero-title {
     font-size: 2rem;
     font-weight: bold;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -243,42 +250,42 @@ main {
 .phone-frame {
     width: 280px;
     height: 570px;
-    background: linear-gradient(145deg, #1e293b, #0f172a);
-    border-radius: 40px;
-    padding: 12px;
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.8),
-        0 0 0 2px #334155,
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.phone-notch {
+.phone-frame::before {
+    content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 28px;
-    background: #0f172a;
-    border-radius: 0 0 20px 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/iPhone-bezel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     z-index: 2;
+    pointer-events: none;
 }
 
 .phone-screen {
-    width: 100%;
-    height: 100%;
+    width: 88%;
+    height: 95%;
     background: #050818;
-    border-radius: 32px;
+    border-radius: 40px;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 .screenshot {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    transform: scale(0.95);
+    object-fit: cover;
+    transform: scale(1.0);
 }
 
 .feature-placeholder {
@@ -347,7 +354,7 @@ main {
 /* Features Section */
 .features {
     padding: 6rem 2rem 0 2rem;
-    background: linear-gradient(180deg, #0f172a 0%, #0f1635 50%, #130f2a 100%);
+    background: transparent;
     width: 100%;
     overflow-x: hidden;
 }
@@ -488,11 +495,6 @@ main {
     height: 490px;
 }
 
-.features-phone .phone-notch {
-    width: 100px;
-    height: 24px;
-}
-
 .feature-card {
     background: linear-gradient(145deg, #1a2d4d, #12213d);
     padding: 1.5rem;
@@ -536,7 +538,7 @@ main {
 /* Algorithm Section */
 .algorithm {
     padding: 6rem 2rem 0 2rem;
-    background: linear-gradient(180deg, #130f2a 0%, #1a0f30 50%, #1f0e35 100%);
+    background: transparent;
     width: 100%;
     overflow-x: hidden;
 }
@@ -680,7 +682,7 @@ main {
 /* Analytics Section */
 .analytics {
     padding: 6rem 2rem 0 2rem;
-    background: linear-gradient(180deg, #1f0e35 0%, #150a25 50%, #030617 100%);
+    background: transparent;
     width: 100%;
     overflow-x: hidden;
 }
@@ -798,7 +800,7 @@ main {
 .download {
     text-align: center;
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #030617 0%, #020510 100%);
+    background: transparent;
     width: 100%;
     overflow-x: hidden;
     min-height: 100vh;
@@ -826,6 +828,7 @@ main {
 .download-title {
     font-size: 3rem;
     font-weight: bold;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -924,7 +927,7 @@ main {
     header {
         display: block;
         padding: 0.75rem 1rem;
-        background-color: #030617;
+        background-color: rgba(1, 5, 47, 0.95);
         min-height: 80px;
         height: 80px;
     }
@@ -1177,10 +1180,6 @@ main {
         height: 408px;
     }
 
-    .features-phone .phone-screen {
-        background: #030617;
-    }
-
     .phone-mockup {
         transform: none;
     }
@@ -1190,6 +1189,11 @@ main {
     }
 
     .phone-frame {
+        width: 200px;
+        height: 408px;
+    }
+
+    .features-phone .phone-frame {
         width: 200px;
         height: 408px;
     }
@@ -1372,7 +1376,7 @@ main {
     }
 
     .btn {
-        width: 220px;
+        width: auto;
         justify-content: center;
         font-size: 0.85rem;
         padding: 0.65rem 1rem;
@@ -1394,11 +1398,6 @@ main {
     .phone-frame {
         width: 180px;
         height: 368px;
-    }
-
-    .phone-notch {
-        width: 100px;
-        height: 24px;
     }
 
     .features {
@@ -1575,7 +1574,7 @@ main {
     .btn-app-store-large,
     .btn-play-store-large {
         padding: 1.5rem 2.5rem;
-        width: 280px;
+        width: auto;
     }
 
     .btn-app-store-large .store-icon,
