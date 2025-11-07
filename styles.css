@@ -497,7 +497,7 @@ main {
 }
 
 .feature-card {
-    background: linear-gradient(145deg, #1a2d4d, #12213d);
+    background: transparent;
     padding: 1.5rem;
     border-radius: 16px;
     border: 1px solid rgba(59, 130, 246, 0.3);
@@ -509,12 +509,10 @@ main {
 .feature-card:hover {
     transform: translateY(-4px);
     border-color: rgba(96, 165, 250, 0.8);
-    box-shadow: 0 12px 40px rgba(96, 165, 250, 0.3);
 }
 
 .feature-card.active {
     border-color: rgba(96, 165, 250, 1);
-    box-shadow: 0 12px 40px rgba(96, 165, 250, 0.4);
 }
 
 .feature-icon-large {
