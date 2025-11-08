@@ -978,17 +978,27 @@ main {
         padding: 2rem 1rem;
     }
 
-    .hero-branding {
-        display: none;
-    }
-
     .hero-container {
         gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-branding {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        order: -3;
     }
 
     .hero-content {
         display: flex;
         flex-direction: column;
+        order: 0;
+    }
+
+    .hero-image {
+        order: -2;
     }
 
     .hero-content h1 {
