@@ -1302,7 +1302,7 @@ main {
     }
 
     .download-branding {
-        display: none;
+        display: flex;
     }
 
     .download-buttons {
@@ -1595,7 +1595,7 @@ main {
     }
 
     .download-branding {
-        display: none;
+        display: flex;
     }
 
     .download-subtitle {
