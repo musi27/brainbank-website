@@ -994,11 +994,11 @@ main {
     .hero-content {
         display: flex;
         flex-direction: column;
-        order: 0;
+        order: -2;
     }
 
     .hero-image {
-        order: -2;
+        order: -1;
     }
 
     .hero-content h1 {
