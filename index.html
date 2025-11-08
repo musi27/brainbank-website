@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainbank - Master Anything with Spaced Repetition</title>
+    <meta name="description" content="Brainbank is a powerful spaced repetition app that helps you learn and retain information efficiently using the FSRS algorithm.">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <main>
+        <!-- Hero Section with App Screenshot -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-branding">
+                    <img src="images/logo.png" alt="Brainbank Logo" class="hero-logo">
+                    <h2 class="hero-title">Brainbank</h2>
+                </div>
+                <div class="hero-content">
+                    <h1>Master Anything with<br class="mobile-break"> Spaced Repetition</h1>
+                    <p class="hero-description">Brainbank uses the scientifically-proven FSRS algorithm to optimize your learning schedule. Study smarter, remember longer, and achieve your learning goals faster.</p>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <ion-icon name="infinite" class="feature-icon"></ion-icon>
+                            <span>FSRS Algorithm</span>
+                        </div>
+                        <div class="hero-feature">
+                            <ion-icon name="analytics-outline" class="feature-icon"></ion-icon>
+                            <span>Progress Tracking</span>
+                        </div>
+                        <div class="hero-feature">
+                            <ion-icon name="layers-outline" class="feature-icon"></ion-icon>
+                            <span>Multiple Card Types</span>
+                        </div>
+                        <div class="hero-feature">
+                            <ion-icon name="albums-outline" class="feature-icon"></ion-icon>
+                            <span>Custom Decks</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-app-store">
+                            <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                            </svg>
+                            <div class="store-text">
+                                <span class="store-label">Download on the</span>
+                                <span class="store-name">App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-play-store">
+                            <svg class="store-icon" viewBox="0 0 24 24">
+                                <defs>
+                                    <linearGradient id="play-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00A0FF;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00A1FF;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="play-green" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#00D775;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00BD68;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="play-yellow" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#FFD500;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#FFCB00;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="play-red" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FF3A44;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#C31162;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#play-blue)" d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5Z"/>
+                                <path fill="url(#play-green)" d="M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12Z"/>
+                                <path fill="url(#play-yellow)" d="M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                                <path fill="url(#play-red)" d="M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81Z"/>
+                            </svg>
+                            <div class="store-text">
+                                <span class="store-label">GET IT ON</span>
+                                <span class="store-name">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <!-- Placeholder for app screenshot - replace with actual screenshot -->
+                                <img src="images/app-screenshot.png" alt="Brainbank App Screenshot" class="screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="screenshot-placeholder">
+                                    <div class="placeholder-content">
+                                        <img src="images/logo.png" alt="Brainbank" class="placeholder-logo">
+                                        <p>Add app screenshot here</p>
+                                        <small>Save as images/app-screenshot.png</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2>FEATURES FOR<br class="mobile-break"> SMART LEARNING</h2>
+            <div class="features-container">
+                <div class="features-row">
+                    <div class="carousel-container">
+                        <button class="carousel-arrow carousel-arrow-left" aria-label="Previous">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <button class="carousel-arrow carousel-arrow-right" aria-label="Next">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+
+                        <div class="carousel-track">
+                            <div class="feature-card" data-feature="decks">
+                                <ion-icon name="layers-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Customizable Decks</h3>
+                                <p>Organize your cards into custom decks and sub-decks for better topic management.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="cloze">
+                                <ion-icon name="text-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Cloze Deletion</h3>
+                                <p>Create powerful fill-in-the-blank cards that help you learn context and relationships better.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="study">
+                                <ion-icon name="folder-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Study by Deck</h3>
+                                <p>Focus on specific topics by studying individual decks or combine multiple decks for comprehensive review.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="quiz">
+                                <ion-icon name="game-controller-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Quiz Modes</h3>
+                                <p>Choose from multiple quiz modes including due cards, learning, mastered, and practice all.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="analytics">
+                                <ion-icon name="stats-chart-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Learning Analytics</h3>
+                                <p>Track your progress with detailed statistics, study heatmaps, memory curves, and performance metrics across all your decks.</p>
+                            </div>
+
+                            <div class="feature-card" data-feature="notifications">
+                                <ion-icon name="notifications-outline" class="feature-icon-large"></ion-icon>
+                                <h3>Smart Notifications</h3>
+                                <p>Never miss a review with customizable reminders, quiet hours, and overdue alerts tailored to your schedule.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-dots"></div>
+                    </div>
+                </div>
+
+                <!-- iPhone Mockup -->
+                <div class="features-phone">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="images/app-screenshot.png" alt="Feature Preview" class="screenshot" id="feature-preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm Section -->
+        <section id="algorithm" class="algorithm">
+            <div class="algorithm-container">
+                <div class="algorithm-content">
+                    <h2>PERSONALISED LEARNING SYSTEM</h2>
+                    <p class="algorithm-intro">Brainbank uses the Free Spaced Repetition Scheduler (FSRS), a modern machine learning-based algorithm that adapts to your unique learning patterns for optimal retention.</p>
+
+                    <div class="algorithm-features">
+                        <!-- Row 1: Card Left, iPhone Right -->
+                        <div class="algo-row">
+                            <div class="algo-card">
+                                <div class="algo-card-header">
+                                    <ion-icon name="git-branch-outline" class="algo-card-icon"></ion-icon>
+                                    <h3>Customised Learning Paths</h3>
+                                </div>
+                                <p>Each card maintains separate difficulty and stability metrics that evolve with every review. Cards progress through distinct states (New → Learning → Review → Mastered) with the algorithm detecting at-risk cards before you forget them.</p>
+                            </div>
+                            <div class="algo-phone">
+                                <img src="images/algo-states.png" alt="Card States" class="algo-image">
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Card Left, iPhone Right -->
+                        <div class="algo-row">
+                            <div class="algo-card">
+                                <div class="algo-card-header">
+                                    <ion-icon name="analytics-outline" class="algo-card-icon"></ion-icon>
+                                    <h3><span class="hide-mobile">Intelligent </span>Prediction & Scheduling</h3>
+                                </div>
+                                <p>FSRS analyzes your performance across four confidence levels (Again, Hard, Good, Easy) to predict optimal review times. Reviews are scheduled with precision based on memory stability and retrievability, ensuring you see cards at the perfect moment before forgetting.</p>
+                            </div>
+                            <div class="algo-phone">
+                                <img src="images/algo-reviews.png" alt="Answer Breakdown" class="algo-image" loading="eager" style="background: rgba(255,0,0,0.1);">
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Card Left, iPhone Right -->
+                        <div class="algo-row">
+                            <div class="algo-card">
+                                <div class="algo-card-header">
+                                    <ion-icon name="options-outline" class="algo-card-icon"></ion-icon>
+                                    <h3>Algorithm Configuration</h3>
+                                </div>
+                                <p>Customize learning steps, graduating intervals (1-30 days), maximum intervals (30-730 days), and interval multipliers for Hard/Easy ratings. Fine-tune 19 FSRS weights (w0-w18) that control memory prediction, difficulty calculations, and retention optimization.</p>
+                            </div>
+                            <div class="algo-phone">
+                                <img src="images/algo-settings.png" alt="FSRS Settings" class="algo-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="analytics">
+            <h2>TRACK YOUR<br class="mobile-break"> LEARNING JOURNEY</h2>
+            <div class="analytics-container">
+                <button class="analytics-arrow analytics-arrow-left" aria-label="Previous">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="analytics-arrow analytics-arrow-right" aria-label="Next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+                <div class="analytics-row">
+                    <div class="analytics-card">
+                        <div class="analytics-card-image-container">
+                            <img src="images/analytics-calendar.png" alt="Study Activity Calendar" class="analytics-card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="analytics-card-image-placeholder">
+                                <ion-icon name="calendar-outline" class="analytics-placeholder-icon"></ion-icon>
+                            </div>
+                            <div class="analytics-card-image-blur"></div>
+                        </div>
+                        <div class="analytics-card-content">
+                            <h3>Study Activity Calendar</h3>
+                            <p>Visualize your consistency with a color-coded heatmap showing daily study sessions over weeks and months, helping you maintain momentum and identify patterns in your learning routine.</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <div class="analytics-card-image-container">
+                            <img src="images/analytics-memory.png" alt="Memory Curve Insights" class="analytics-card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="analytics-card-image-placeholder">
+                                <ion-icon name="trending-up-outline" class="analytics-placeholder-icon"></ion-icon>
+                            </div>
+                            <div class="analytics-card-image-blur"></div>
+                        </div>
+                        <div class="analytics-card-content">
+                            <h3>Memory Curve Insights</h3>
+                            <p>Track how well you retain information over time with FSRS-based retention graphs, revealing the effectiveness of your spaced repetition and when knowledge consolidates into long-term memory.</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <div class="analytics-card-image-container">
+                            <img src="images/analytics-performance.png" alt="Performance Analytics" class="analytics-card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="analytics-card-image-placeholder">
+                                <ion-icon name="stats-chart-outline" class="analytics-placeholder-icon"></ion-icon>
+                            </div>
+                            <div class="analytics-card-image-blur"></div>
+                        </div>
+                        <div class="analytics-card-content">
+                            <h3>Performance Analytics</h3>
+                            <p>Monitor your learning velocity with detailed metrics including retention rate, cards reviewed, average difficulty, and mastery progress across all your decks and study sessions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download">
+            <div class="download-branding">
+                <img src="images/logo.png" alt="Brainbank Logo" class="download-logo">
+                <h2 class="download-title">Brainbank</h2>
+            </div>
+            <p class="download-subtitle">Start studying smarter today</p>
+            <div class="download-buttons">
+                <a href="#" class="btn btn-app-store-large">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    <div class="store-text">
+                        <span class="store-label">Download on the</span>
+                        <span class="store-name">App Store</span>
+                    </div>
+                </a>
+                <a href="#" class="btn btn-play-store-large">
+                    <svg class="store-icon" viewBox="0 0 24 24">
+                        <defs>
+                            <linearGradient id="play-blue-large" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00A0FF;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00A1FF;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="play-green-large" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#00D775;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00BD68;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="play-yellow-large" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FFD500;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFCB00;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="play-red-large" x1="100%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF3A44;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#C31162;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#play-blue-large)" d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5Z"/>
+                        <path fill="url(#play-green-large)" d="M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12Z"/>
+                        <path fill="url(#play-yellow-large)" d="M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                        <path fill="url(#play-red-large)" d="M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81Z"/>
+                    </svg>
+                    <div class="store-text">
+                        <span class="store-label">GET IT ON</span>
+                        <span class="store-name">Google Play</span>
+                    </div>
+                </a>
+            </div>
+            <p class="download-copyright">&copy; 2025 Brainbank. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                <span class="legal-separator">•</span>
+                <a href="terms-of-service.html" target="_blank">Terms of Service</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Feature card carousel and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            const featurePreview = document.getElementById('feature-preview');
+            const phoneScreen = featurePreview.parentElement;
+            const carouselTrack = document.querySelector('.carousel-track');
+            const carouselDotsContainer = document.querySelector('.carousel-dots');
+            const leftArrow = document.querySelector('.carousel-arrow-left');
+            const rightArrow = document.querySelector('.carousel-arrow-right');
+
+            let currentIndex = 0;
+            let autoSlideInterval;
+
+            // Create dots
+            featureCards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    stopAutoSlide();
+                    slideCarousel(index);
+                    startAutoSlide();
+                });
+                carouselDotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.carousel-dot');
+
+            // Feature screenshots and placeholders
+            const featureData = {
+                'cloze': {
+                    image: 'images/feature-cloze.png',
+                    icon: 'text-outline',
+                    title: 'Cloze Deletion',
+                    description: 'Fill-in-the-blank cards'
+                },
+                'analytics': {
+                    image: 'images/feature-analytics.png',
+                    icon: 'stats-chart-outline',
+                    title: 'Learning Analytics',
+                    description: 'Progress tracking'
+                },
+                'decks': {
+                    image: 'images/feature-decks.png',
+                    icon: 'layers-outline',
+                    title: 'Customizable Decks',
+                    description: 'Organized learning'
+                },
+                'quiz': {
+                    image: 'images/feature-quiz.png',
+                    icon: 'game-controller-outline',
+                    title: 'Quiz Modes',
+                    description: 'Multiple study options'
+                },
+                'study': {
+                    image: 'images/feature-study.png',
+                    icon: 'folder-outline',
+                    title: 'Study by Deck',
+                    description: 'Focused practice'
+                },
+                'notifications': {
+                    image: 'images/feature-notifications.png',
+                    icon: 'notifications-outline',
+                    title: 'Smart Notifications',
+                    description: 'Never miss a review'
+                }
+            };
+
+            function updatePreview(feature) {
+                const data = featureData[feature];
+                if (data) {
+                    // Try to load the image first
+                    const img = new Image();
+                    img.onload = function() {
+                        phoneScreen.innerHTML = `<img src="${data.image}" alt="${data.title}" class="screenshot">`;
+                    };
+                    img.onerror = function() {
+                        // Fallback to placeholder if image doesn't exist
+                        phoneScreen.innerHTML = `
+                            <div class="feature-placeholder">
+                                <ion-icon name="${data.icon}" class="placeholder-icon"></ion-icon>
+                                <h3 class="placeholder-title">${data.title}</h3>
+                                <p class="placeholder-description">${data.description}</p>
+                            </div>
+                        `;
+                    };
+                    img.src = data.image;
+                }
+            }
+
+            function updateSlidePosition() {
+                // Calculate the slide amount - each card is 100% width with no gap
+                // Use the features-row width to ensure proper alignment
+                const rowElement = document.querySelector('.features-row');
+                const containerWidth = rowElement.offsetWidth;
+                const slideAmount = containerWidth * currentIndex;
+
+                carouselTrack.style.transform = `translateX(-${slideAmount}px)`;
+
+                // Update active state and preview
+                featureCards.forEach(c => c.classList.remove('active'));
+                if (featureCards[currentIndex]) {
+                    featureCards[currentIndex].classList.add('active');
+                    const feature = featureCards[currentIndex].getAttribute('data-feature');
+                    updatePreview(feature);
+                }
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function slideCarousel(index) {
+                // Normalize index
+                if (index >= featureCards.length) {
+                    index = 0;
+                } else if (index < 0) {
+                    index = featureCards.length - 1;
+                }
+
+                currentIndex = index;
+                updateSlidePosition();
+            }
+
+            function startAutoSlide() {
+                // Clear any existing interval first
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+
+                autoSlideInterval = setInterval(() => {
+                    currentIndex++;
+                    if (currentIndex >= featureCards.length) {
+                        currentIndex = 0;
+                    }
+                    updateSlidePosition();
+                }, 3000);
+            }
+
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                }
+            }
+
+            // Arrow click handlers
+            leftArrow.addEventListener('click', () => {
+                stopAutoSlide();
+                slideCarousel(currentIndex - 1);
+                startAutoSlide();
+            });
+
+            rightArrow.addEventListener('click', () => {
+                stopAutoSlide();
+                slideCarousel(currentIndex + 1);
+                startAutoSlide();
+            });
+
+            // Hover interactions
+            featureCards.forEach((card, index) => {
+                card.addEventListener('mouseenter', function() {
+                    stopAutoSlide();
+                    slideCarousel(index);
+                });
+            });
+
+            // Resume auto-slide when mouse leaves the carousel
+            const carouselContainer = document.querySelector('.carousel-container');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseleave', function() {
+                    startAutoSlide();
+                });
+            }
+
+            // Touch swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            const featuresSection = document.querySelector('.features');
+
+            featuresSection.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            featuresSection.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    stopAutoSlide();
+                    if (diff > 0) {
+                        // Swipe left - next card
+                        slideCarousel(currentIndex + 1);
+                    } else {
+                        // Swipe right - previous card
+                        slideCarousel(currentIndex - 1);
+                    }
+
+                    // Only restart auto-slide on desktop
+                    if (window.innerWidth > 768) {
+                        startAutoSlide();
+                    }
+                }
+            }
+
+            // Initialize
+            if (featureCards.length > 0) {
+                slideCarousel(0);
+
+                // Only auto-slide on desktop
+                if (window.innerWidth > 768) {
+                    startAutoSlide();
+                }
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                updateSlidePosition();
+
+                // Stop auto-slide on mobile, start on desktop
+                if (window.innerWidth <= 768) {
+                    stopAutoSlide();
+                } else {
+                    if (!autoSlideInterval) {
+                        startAutoSlide();
+                    }
+                }
+            });
+        });
+
+        // Analytics cards horizontal scroll on mobile
+        const analyticsRow = document.querySelector('.analytics-row');
+        const analyticsLeftArrow = document.querySelector('.analytics-arrow-left');
+        const analyticsRightArrow = document.querySelector('.analytics-arrow-right');
+
+        if (analyticsLeftArrow && analyticsRightArrow && analyticsRow) {
+            analyticsLeftArrow.addEventListener('click', () => {
+                const cardWidth = analyticsRow.querySelector('.analytics-card').offsetWidth;
+                analyticsRow.scrollBy({ left: -(cardWidth + 16), behavior: 'smooth' });
+            });
+
+            analyticsRightArrow.addEventListener('click', () => {
+                const cardWidth = analyticsRow.querySelector('.analytics-card').offsetWidth;
+                analyticsRow.scrollBy({ left: cardWidth + 16, behavior: 'smooth' });
+            });
+        }
+
+        // Platform-specific download buttons
+        function detectPlatform() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isMobile = window.innerWidth <= 768;
+
+            if (!isMobile) {
+                // Desktop - show both buttons
+                return 'desktop';
+            }
+
+            // Check for iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            }
+
+            // Check for Android
+            if (/android/i.test(userAgent)) {
+                return 'android';
+            }
+
+            // Default for other mobile devices - show both
+            return 'desktop';
+        }
+
+        // Hide/show buttons based on platform
+        function updateDownloadButtons() {
+            const platform = detectPlatform();
+            const appStoreButtons = document.querySelectorAll('.btn-app-store, .btn-app-store-large');
+            const playStoreButtons = document.querySelectorAll('.btn-play-store, .btn-play-store-large');
+
+            if (platform === 'ios') {
+                // iOS - show only App Store button
+                playStoreButtons.forEach(btn => btn.style.display = 'none');
+                appStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+            } else if (platform === 'android') {
+                // Android - show only Google Play button
+                appStoreButtons.forEach(btn => btn.style.display = 'none');
+                playStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+            } else {
+                // Desktop or other - show both buttons
+                appStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+                playStoreButtons.forEach(btn => btn.style.display = 'inline-flex');
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', updateDownloadButtons);
+
+        // Update on window resize (in case user rotates device or changes viewport)
+        window.addEventListener('resize', updateDownloadButtons);
+    </script>
+</body>
+</html>
