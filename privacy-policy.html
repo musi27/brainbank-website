@@ -351,7 +351,7 @@
 
     <main class="legal-page">
         <h1>PRIVACY POLICY</h1>
-        <p class="effective-date"><strong>Last updated November 03, 2025</strong></p>
+        <p class="effective-date"><strong>Last updated November 19, 2025</strong></p>
 
         <div class="intro">
             <p>This Privacy Notice for <strong>SC MUSINOX ASSET MANAGEMENT SRL</strong> ('we', 'us', or 'our'), describes how and why we might access, collect, store, use, and/or share ('process') your personal information when you use our services ('Services'), including when you:</p>
@@ -448,7 +448,15 @@
 
         <p><strong>Study Performance Data.</strong> We automatically track your card review history, review ratings, FSRS algorithm data (stability, difficulty, review intervals, card state), quiz session data, study streak information, and daily study activity for the heatmap calendar. This data is used to optimize your spaced repetition scheduling and show you progress statistics.</p>
 
-        <p><strong>User Preferences and Settings.</strong> We store your quiz answer mode preferences, notification settings, FSRS algorithm parameters, profile picture (optional), theme preferences, and analytics opt-out preferences.</p>
+        <p><strong>Camera and Photo Library Access.</strong> If you grant permission, we access your device's camera and photo library to allow you to add images to your flashcards. Images are automatically compressed (to 800px width, 80% JPEG quality) before upload to optimize storage and performance. We do not access your camera or photos for any other purpose, and we do not use facial recognition or analyze image content.</p>
+
+        <p><strong>Profile Picture.</strong> If you choose to upload a profile picture, the image is stored in Firebase Storage and associated with your account. You can update or remove your profile picture at any time from the Profile screen.</p>
+
+        <p><strong>Local Device Storage.</strong> The app stores your flashcard data, images, and study progress locally on your device for offline access. This cached data is automatically synced with our cloud servers when you have internet connectivity.</p>
+
+        <p><strong>Brainbank Certified Decks.</strong> We provide pre-made, verified flashcard decks ("Certified Decks") that users can add to their accounts. When you add a Certified Deck, the deck content is copied to your personal account. Your study progress (FSRS scheduling data) remains private and is not shared. We may automatically update Certified Deck content to add new cards or correct errors, but updates preserve your existing study progress. We track which Certified Decks users have added for analytics and update purposes.</p>
+
+        <p><strong>User Preferences and Settings.</strong> We store your quiz answer mode preferences, notification settings, FSRS algorithm parameters, theme preferences, and analytics opt-out preferences.</p>
 
         <p><strong>Analytics and Usage Data.</strong> We use Mixpanel, a third-party analytics service, to understand how users interact with our application. Mixpanel collects information about your usage patterns, feature interactions, subscription events, and device identifiers. This helps us improve the app experience and develop new features. Mixpanel's privacy policy is available at: <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank">https://mixpanel.com/legal/privacy-policy/</a>. You can disable analytics tracking in Settings → Analytics toggle.</p>
 
@@ -572,8 +580,16 @@
                     <td>Purchase information (NOT payment card details)</td>
                     <td><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple</a> / <a href="https://policies.google.com/privacy" target="_blank">Google</a></td>
                 </tr>
+                <tr>
+                    <td><strong>Sentry</strong></td>
+                    <td>Error tracking and crash reporting</td>
+                    <td>Error messages, stack traces, device info, user ID/email</td>
+                    <td><a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy</a></td>
+                </tr>
             </tbody>
         </table>
+
+        <p><strong>Error Tracking.</strong> We use Sentry to track errors and crashes in production. Sentry collects error messages, stack traces, device information, and user identifiers to help us identify and fix issues. Sentry does NOT collect your flashcard content, deck names, or study data. Unlike analytics, error tracking cannot be disabled as it is essential for maintaining app stability.</p>
 
         <p>We may also need to share your personal information in the following situations:</p>
 
